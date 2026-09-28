@@ -1,6 +1,8 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class movement : MonoBehaviour
 {
@@ -11,19 +13,27 @@ public class movement : MonoBehaviour
 
     float StartX;
     float StartY;
+    float POSX;
+    float POSY = 44.09f;
+    float POSZ;
     void Start()
     {
         StartX = transform.localPosition.x;
         StartY = transform.localPosition.y;
+        POSX = transform.localEulerAngles.x;
+        POSY = transform.localEulerAngles.y;
+        POSZ = transform.localEulerAngles.z;
     }
     
     void Update()
     {
         motion();
+        Rotate();
+        //transform.Rotate(0f, 0f, 50f * Time.deltaTime, Space.Self);
 
     }
 
-    private void motion()
+    void motion()
     {
         float xoffset = moves.x * controlSpeed * Time.deltaTime;
         float yoffset = moves.y * controlSpeed * Time.deltaTime;
@@ -34,6 +44,11 @@ public class movement : MonoBehaviour
         
 
         transform.localPosition = new Vector3(clampedPosX, clampedPosY, transform.localPosition.z);
+    }
+
+    void Rotate()
+    {
+        transform.localRotation = Quaternion.Euler(POSX,POSY,POSZ);
     }
 
     public void OnMove(InputValue value)
