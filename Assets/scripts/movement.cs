@@ -13,13 +13,20 @@ public class movement : MonoBehaviour
 
     float StartX;
     float StartY;
+
+    [SerializeField] float rollfactor=20f;
+    [SerializeField] float rollspeed = 10f;
     float POSX;
-    float POSY = 44.09f;
+    float POSY;
     float POSZ;
+
+    
     void Start()
     {
         StartX = transform.localPosition.x;
         StartY = transform.localPosition.y;
+
+
         POSX = transform.localEulerAngles.x;
         POSY = transform.localEulerAngles.y;
         POSZ = transform.localEulerAngles.z;
@@ -29,7 +36,6 @@ public class movement : MonoBehaviour
     {
         motion();
         Rotate();
-        //transform.Rotate(0f, 0f, 50f * Time.deltaTime, Space.Self);
 
     }
 
@@ -48,7 +54,16 @@ public class movement : MonoBehaviour
 
     void Rotate()
     {
-        transform.localRotation = Quaternion.Euler(POSX,POSY,POSZ);
+        Quaternion targetlocation = Quaternion.Euler(-(POSX+12f)*moves.y,(POSY),-(POSZ+12f)*moves.y);
+        if (moves.x > 0)
+        {   
+            targetlocation = Quaternion.Euler(-(POSX-15f)*moves.x,(POSY),(POSZ));
+        }
+        else if (moves.x < 0)
+        {
+            targetlocation = Quaternion.Euler((POSX),(POSY),-(POSZ+15f)*moves.x);
+        }
+        transform.localRotation = Quaternion.Lerp(transform.localRotation,targetlocation,rollspeed*Time.deltaTime);
     }
 
     public void OnMove(InputValue value)

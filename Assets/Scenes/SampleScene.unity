@@ -854,6 +854,7 @@ MonoBehaviour:
   controlSpeed: 25
   XClampRange: 8
   YClampRange: 5
+  rollfactor: 0
 --- !u!1001 &9015297152946872056
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -905,6 +906,34 @@ PrefabInstance:
     - target: {fileID: 957351030938596415, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.000000009303477
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9268894
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.37533468
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 44.09
+      objectReference: {fileID: 0}
+    - target: {fileID: 1212234517807952892, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8966381346684671798, guid: b9729f8096ea5284188124f728e0cc4c, type: 3}
