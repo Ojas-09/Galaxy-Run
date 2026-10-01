@@ -4,10 +4,17 @@ using UnityEngine.InputSystem;
 public class shoot : MonoBehaviour
 {
     [SerializeField] GameObject[] lasers;
+    [SerializeField] RectTransform crosshair;
     bool isfiring = false;
+
+    void Start()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
         processfiring();
+        movecrosshair();
     }
     public void OnFire(InputValue value)
     {
@@ -22,5 +29,10 @@ public class shoot : MonoBehaviour
             emissionmodule.enabled = isfiring;
         }
         
+    }
+
+    void movecrosshair()
+    {
+        crosshair.position = Mouse.current.position.ReadValue();
     }
 }
