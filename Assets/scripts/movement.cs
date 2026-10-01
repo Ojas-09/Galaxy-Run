@@ -14,7 +14,7 @@ public class movement : MonoBehaviour
     float StartX;
     float StartY;
 
-    [SerializeField] float rollfactor=20f;
+    //[SerializeField] float rollfactor=20f;
     [SerializeField] float rollspeed = 10f;
     float POSX;
     float POSY;
