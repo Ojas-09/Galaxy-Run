@@ -11,7 +11,6 @@ public class enemy : MonoBehaviour
     void Start()
     {
         scoreboard = FindAnyObjectByType<scoreboard>();
-        Debug.Log(scoreboard);
     }
 
     void OnParticleCollision(GameObject other)
