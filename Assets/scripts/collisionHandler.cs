@@ -10,8 +10,8 @@ public class collisionHandler : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        gamescenemanager.reloadlevel();
+        //gamescenemanager.reloadlevel();
         Instantiate(destoryedVFX,transform.position,Quaternion.identity);
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 }
