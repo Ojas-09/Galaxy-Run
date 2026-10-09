@@ -12,6 +12,6 @@ public class collisionHandler : MonoBehaviour
     {
         gamescenemanager.reloadlevel();
         Instantiate(destoryedVFX,transform.position,Quaternion.identity);
-        //Destroy(gameObject);
+        Destroy(gameObject);
     }
 }
